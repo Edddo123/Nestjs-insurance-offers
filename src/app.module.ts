@@ -5,6 +5,7 @@ import { UsersModule } from './users/users.module';
 import { APP_PIPE } from '@nestjs/core';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Client } from './users/entities/client.entity';
 
 @Module({
   imports: [UsersModule, 
@@ -14,9 +15,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: 'insurance',
       host: 'localhost',
       username: 'postgres',
+      entities: [Client],
       port: 5432,
-      password: process.env.DB_PASSWORD
-
+      password: process.env.DB_PASSWORD,
+      synchronize: true
     })
   ],
   controllers: [AppController],
