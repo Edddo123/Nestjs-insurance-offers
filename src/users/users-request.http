@@ -1,0 +1,9 @@
+### Sign up client
+
+POST http://localhost:3000/users/client
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "1234"
+}
