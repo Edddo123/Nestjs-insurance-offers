@@ -26,7 +26,11 @@ export class PolicyService {
     return await this.repo.find({
       relations: ['client'],
       skip: (pageNumber - 1) * pageLimit,
-      take: pageLimit
+      take: pageLimit,
     });
+  }
+
+  async findByClient(clientId: string) {
+    return await this.repo.find({ where: { client: clientId }, relations: ['client'] });
   }
 }

@@ -13,12 +13,12 @@ export class Client {
   password: string;
 
   @OneToMany(() => Policy, (policy) => policy.client)
-  policy: Policy
+  policy: Policy[];
+
 }
 
 // @PrimaryGeneratedColumn("uuid")
 // id: string;
-
 
 // @Column() - if needed just uuid value
 // @Generated("uuid")

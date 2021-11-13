@@ -1,0 +1,12 @@
+### Create an offer
+POST http://localhost:3000/offers
+Content-Type: application/json
+
+{
+    "policyId": "e3234593-164a-4f94-9ff7-f7d3186d1ee3",
+    "offeredCoverage": 20000,
+    "fee": 2000
+}
+
+### Get offers
+GET http://localhost:3000/offers

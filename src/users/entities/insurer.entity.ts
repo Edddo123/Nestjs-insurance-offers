@@ -1,4 +1,5 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Offers } from 'src/offers/entities/offers.entity';
+import { Column, Entity, ManyToMany, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Insurer {
@@ -10,6 +11,11 @@ export class Insurer {
 
   @Column()
   password: string;
+
+  @OneToMany(() => Offers, (offers) => offers.policy)
+  offerConnection: Offers[];
 }
+
+
 
 

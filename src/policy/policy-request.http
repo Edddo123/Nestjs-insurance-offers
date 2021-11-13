@@ -13,3 +13,8 @@ Content-Type: application/json
 ### Get all policies
 
 GET http://localhost:3000/policy?page=1&limit=4
+
+### Get all policies of client
+
+GET http://localhost:3000/policy/client
+

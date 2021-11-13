@@ -6,6 +6,7 @@ import {
   Query,
   UseGuards,
   UseInterceptors,
+  Request
 } from '@nestjs/common';
 import { query } from 'express';
 import { JwtAuthGuard } from 'src/guards/auth.guard';
@@ -26,6 +27,12 @@ export class PolicyController {
   @Get()
   async listPolicies(@Query() params: GetPoliciesDto) {
     return await this.policyService.findAll(params.limit, params.page);
+  }
+
+  @Get('/client')
+  @UseGuards(JwtAuthGuard)
+  async listClientPolicies(@Request() request: any) {
+    return await this.policyService.findByClient(request.user.userId)
   }
 
   @Post()

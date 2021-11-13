@@ -1,5 +1,6 @@
+import { Offers } from 'src/offers/entities/offers.entity';
 import { Client } from 'src/users/entities/client.entity';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Policy {
@@ -20,4 +21,7 @@ export class Policy {
 
   @ManyToOne(() => Client, (client) => client.policy)
   client: Client
+
+  @OneToMany(() => Offers, (offers) => offers.policy)
+  offerConnection: Offers[];
 }
