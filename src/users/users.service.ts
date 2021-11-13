@@ -11,4 +11,8 @@ export class UsersService {
 
     return await this.repo.save(client);
   }
+
+  async findClientsByEmail(email: string) {
+    return await this.repo.find({ where: { email } });
+  }
 }
