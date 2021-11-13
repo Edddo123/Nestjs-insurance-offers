@@ -7,3 +7,22 @@ Content-Type: application/json
     "email": "test1@test.com",
     "password": "1234"
 }
+
+### Login client
+
+POST http://localhost:3000/users/client/login
+Content-Type: application/json
+
+{
+    "email": "test1@test.com",
+    "password": "1234"
+}
+
+### Current user
+
+GET http://localhost:3000/users/client
+
+
+### Logout client
+
+POST http://localhost:3000/users/client/logout
