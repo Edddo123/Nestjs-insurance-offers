@@ -8,6 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Client } from './users/entities/client.entity';
 import { PolicyModule } from './policy/policy.module';
 import { Policy } from './policy/entities/policy.entity';
+import { Insurer } from './users/entities/insurer.entity';
 const cookieSession = require('cookie-session');
 
 @Module({
@@ -19,7 +20,7 @@ const cookieSession = require('cookie-session');
       database: 'insurance',
       host: 'localhost',
       username: 'postgres',
-      entities: [Client, Policy],
+      entities: [Client, Policy, Insurer],
       port: 5432,
       password: process.env.DB_PASSWORD,
       synchronize: true,

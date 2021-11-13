@@ -19,4 +19,14 @@ export class PolicyService {
 
     return await this.repo.save(newPolicy);
   }
+
+  async findAll(limit?: number, page?: number) {
+    const pageLimit = limit || 10;
+    const pageNumber = page || 1;
+    return await this.repo.find({
+      relations: ['client'],
+      skip: (pageNumber - 1) * pageLimit,
+      take: pageLimit
+    });
+  }
 }

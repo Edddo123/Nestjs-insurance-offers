@@ -9,3 +9,7 @@ Content-Type: application/json
     "dentistCoverage": 40000,
     "duration": 3
 }
+
+### Get all policies
+
+GET http://localhost:3000/policy?page=1&limit=4

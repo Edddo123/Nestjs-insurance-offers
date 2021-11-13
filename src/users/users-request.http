@@ -26,3 +26,27 @@ GET http://localhost:3000/users/client
 ### Logout client
 
 POST http://localhost:3000/users/client/logout
+
+### Sign up insurer
+
+POST http://localhost:3000/users/insurer
+Content-Type: application/json
+
+{
+    "name": "ALDAGI4",
+    "password": "1234"
+}
+
+### Login insurer
+
+POST http://localhost:3000/users/insurer/login
+Content-Type: application/json
+
+{
+    "name": "ALDAGI4",
+    "password": "1234"
+}
+
+### Get insurer
+
+GET http://localhost:3000/users/insurer
