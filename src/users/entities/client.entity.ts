@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Policy } from 'src/policy/entities/policy.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Client {
@@ -10,6 +11,9 @@ export class Client {
 
   @Column()
   password: string;
+
+  @OneToMany(() => Policy, (policy) => policy.client)
+  policy: Policy
 }
 
 // @PrimaryGeneratedColumn("uuid")

@@ -6,6 +6,8 @@ import { APP_PIPE } from '@nestjs/core';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Client } from './users/entities/client.entity';
+import { PolicyModule } from './policy/policy.module';
+import { Policy } from './policy/entities/policy.entity';
 const cookieSession = require('cookie-session');
 
 @Module({
@@ -17,11 +19,12 @@ const cookieSession = require('cookie-session');
       database: 'insurance',
       host: 'localhost',
       username: 'postgres',
-      entities: [Client],
+      entities: [Client, Policy],
       port: 5432,
       password: process.env.DB_PASSWORD,
       synchronize: true,
     }),
+    PolicyModule,
   ],
   controllers: [AppController],
   providers: [

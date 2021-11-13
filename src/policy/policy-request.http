@@ -1,0 +1,11 @@
+### Create policy
+
+POST http://localhost:3000/policy
+Content-Type: application/json
+
+{
+    "emergencyCoverage": 20000,
+    "plasticSurgery": 30000,
+    "dentistCoverage": 40000,
+    "duration": 3
+}
