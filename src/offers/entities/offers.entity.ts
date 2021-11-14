@@ -28,11 +28,11 @@ export class Offers {
   @Column()
   fee: number;
 
-  @ManyToOne(() => Policy, (policy) => policy.offerConnection)
+  @ManyToOne(() => Policy, (policy) => policy.offerConnection, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'policyId' })
   policy: Policy;
 
-  @ManyToOne(() => Insurer, (insurer) => insurer.offerConnection)
+  @ManyToOne(() => Insurer, (insurer) => insurer.offerConnection, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'insurerId' })
   insurer: Insurer;
 }

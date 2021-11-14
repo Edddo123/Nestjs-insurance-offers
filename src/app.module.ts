@@ -18,16 +18,16 @@ const cookieSession = require('cookie-session');
     UsersModule,
     ConfigModule.forRoot({ envFilePath: `.env` }),
     TypeOrmModule.forRoot(
-      {
-      type: 'postgres',
-      database: 'insurance',
-      host: 'localhost',
-      username: 'postgres',
-      entities: [Client, Policy, Insurer, Offers],
-      port: 5432,
-      password: process.env.DB_PASSWORD,
-      synchronize: true,
-    }
+      // {
+      // type: 'postgres',
+      // database: 'insurance',
+      // host: 'localhost',
+      // username: 'postgres',
+      // entities: [Client, Policy, Insurer, Offers],
+      // port: 5432,
+      // password: process.env.DB_PASSWORD,
+      // synchronize: true,
+    // }
     ),
     PolicyModule,
     OffersModule,

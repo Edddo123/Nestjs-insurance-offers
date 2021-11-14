@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PolicyModule } from 'src/policy/policy.module';
+import { PolicyModule } from '../policy/policy.module';
 import { Offers } from './entities/offers.entity';
 import { OffersController } from './offers.controller';
 import { OffersService } from './offers.service';

@@ -1,8 +1,8 @@
 import { Body, Controller, Post, UseGuards, Request, Get, UseInterceptors } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { JwtAuthGuard } from 'src/guards/auth.guard';
-import { InsurerJwtAuthGuard } from 'src/guards/insurer.guard';
-import { SerializeInterceptor } from 'src/users/interceptors/serialize-user.interceptor';
+import { JwtAuthGuard } from '../guards/auth.guard';
+import { InsurerJwtAuthGuard } from '../guards/insurer.guard';
+import { SerializeInterceptor } from '../users/interceptors/serialize-user.interceptor';
 import { CreateOfferDto } from './dto/create-offer.dto';
 import { OffersDto } from './dto/offer.dto';
 import { OffersService } from './offers.service';

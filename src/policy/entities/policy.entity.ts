@@ -1,6 +1,12 @@
 import { Offers } from '../../offers/entities/offers.entity';
 import { Client } from '../../users/entities/client.entity';
-import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 export class Policy {
@@ -19,8 +25,8 @@ export class Policy {
   @Column()
   duration: number;
 
-  @ManyToOne(() => Client, (client) => client.policy)
-  client: Client
+  @ManyToOne(() => Client, (client) => client.policy, { onDelete: 'CASCADE' })
+  client: Client;
 
   @OneToMany(() => Offers, (offers) => offers.policy)
   offerConnection: Offers[];

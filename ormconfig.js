@@ -1,11 +1,17 @@
-// module.exports = {
-//     name: 'default',
-//     type: 'sqlite',
-//     database: process.env.NODE_ENV == "development" ? 'db.sqlite': 'db.sqlite',
-//     entities: process.env.NODE_ENV == "development" ?
-//     ['**/*.entity.js'] : ['**/*.entity.js'],
-//     synchronize: process.env.NODE_ENV == "development" ? false : false, // test seem to need it maybe since db gets deleted and recreated every time to synchronize entity file with db
-//     migrations: ["dist/src/migrations/*.js"],
-//     migrationsTableName: "migrations_typeorm",
-//     migrationsRun: true
-// }
+module.exports = {
+  type: 'postgres',
+  database:
+    process.env.NODE_ENV == 'development' ? 'insurance' : 'insurance_dev',
+  host: 'localhost',
+  username: 'postgres',
+  entities:
+    process.env.NODE_ENV == 'development'
+      ? ['**/*.entity.js']
+      : ['**/*.entity.ts'],
+  port: 5432,
+  password: process.env.DB_PASSWORD,
+  synchronize: process.env.NODE_ENV == 'development' ? false : true,
+  migrations: ['dist/migrations/*.js'],
+  migrationsTableName: 'migrations_typeorm',
+  migrationsRun: true,
+};
