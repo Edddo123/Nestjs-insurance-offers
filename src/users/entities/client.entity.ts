@@ -1,4 +1,4 @@
-import { Policy } from 'src/policy/entities/policy.entity';
+import { Policy } from '../../policy/entities/policy.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()

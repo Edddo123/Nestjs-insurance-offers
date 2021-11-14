@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Client } from 'src/users/entities/client.entity';
+import { Client } from '../users/entities/client.entity';
 import { Repository } from 'typeorm';
 import { CreatePolicyDto } from './dto/create-policy.dto';
 import { Policy } from './entities/policy.entity';

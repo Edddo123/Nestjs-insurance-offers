@@ -9,11 +9,11 @@ import {
   Request
 } from '@nestjs/common';
 import { query } from 'express';
-import { JwtAuthGuard } from 'src/guards/auth.guard';
-import { CurrentUser } from 'src/users/decorators/current-user.decorator';
-import { Client } from 'src/users/entities/client.entity';
-import { CurrentUserInterceptor } from 'src/users/interceptors/current-user.interceptor';
-import { SerializeInterceptor } from 'src/users/interceptors/serialize-user.interceptor';
+import { JwtAuthGuard } from '../guards/auth.guard';
+import { CurrentUser } from '../users/decorators/current-user.decorator';
+import { Client } from '../users/entities/client.entity';
+import { CurrentUserInterceptor } from '../users/interceptors/current-user.interceptor';
+import { SerializeInterceptor } from '../users/interceptors/serialize-user.interceptor';
 import { CreatePolicyDto } from './dto/create-policy.dto';
 import { GetPoliciesDto } from './dto/get-policies.dto';
 import { PolicyDto } from './dto/policy.dto';

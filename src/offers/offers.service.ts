@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { PolicyService } from 'src/policy/policy.service';
+import { PolicyService } from '../policy/policy.service';
 import { In, Repository } from 'typeorm';
 import { CreateOfferDto } from './dto/create-offer.dto';
 import { Offers } from './entities/offers.entity';

@@ -1,5 +1,5 @@
-import { Policy } from 'src/policy/entities/policy.entity';
-import { Insurer } from 'src/users/entities/insurer.entity';
+import { Policy } from '../../policy/entities/policy.entity';
+import { Insurer } from '../../users/entities/insurer.entity';
 import {
   Column,
   Entity,
