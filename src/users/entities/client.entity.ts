@@ -6,6 +6,9 @@ export class Client {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  // @Column() 
+  // name: string;
+
   @Column()
   email: string;
 
@@ -14,7 +17,6 @@ export class Client {
 
   @OneToMany(() => Policy, (policy) => policy.client)
   policy: Policy[];
-
 }
 
 // @PrimaryGeneratedColumn("uuid")
